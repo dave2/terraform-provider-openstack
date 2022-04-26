@@ -76,6 +76,8 @@ func checkForRetryableError(err error) *resource.RetryError {
 		return resource.RetryableError(err)
 	case gophercloud.ErrDefault409:
 		return resource.RetryableError(err)
+	case gophercloud.ErrDefault429:
+		return resource.RetryableError(err)
 	case gophercloud.ErrDefault503:
 		return resource.RetryableError(err)
 	case gophercloud.ErrUnexpectedResponseCode:
